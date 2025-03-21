@@ -22,4 +22,5 @@ jobs:
         run: npm i @lambdatest/smartui-cli
 
       - name: Execute SmartUI tests
-        run: npx smartui --config smartui-web.json exec -- mvn --quiet test -D suite=sdk-cloud.xml
+        run: smartui capture urls.json --config smartui-web.json
+
