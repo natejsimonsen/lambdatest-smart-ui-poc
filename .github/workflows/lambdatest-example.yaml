@@ -1,6 +1,7 @@
 name: LambdaTest Example
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
