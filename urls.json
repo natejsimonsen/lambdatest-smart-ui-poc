@@ -3,25 +3,5 @@
     "name": "https://www.coupa.com/",
     "url": "https://www.coupa.com/",
     "waitForTimeout": 1000
-  },
-  {
-    "name": "https://www.coupa.com/blog",
-    "url": "https://www.coupa.com/blog",
-    "waitForTimeout": 1000
-  },
-  {
-    "name": "https://www.coupa.com/company",
-    "url": "https://www.coupa.com/company",
-    "waitForTimeout": 1000
-  },
-  {
-    "name": "https://www.coupa.com/products/supply-chain-design",
-    "url": "https://www.coupa.com/products/supply-chain-design",
-    "waitForTimeout": 1000
-  },
-  {
-    "name": "https://www.coupa.com/customers",
-    "url": "https://www.coupa.com/customers",
-    "waitForTimeout": 1000
   }
 ]
