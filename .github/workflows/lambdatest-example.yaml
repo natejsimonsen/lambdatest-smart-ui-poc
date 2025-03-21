@@ -1,24 +1,25 @@
 name: LambdaTest Example
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+env:
+  LT_USERNAME: ${{ secrets.LT_USERNAME }}
+  LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+  PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
 
 jobs:
-  init:
+  smartui_tests:
+    name: Execute SmartUI SDK Cloud Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      
-      - name: Install CLI
-        run: npm install -g @lambdatest/smartui-cli
-      
-      - name: Run Tests
-        run: PROJECT_TOKEN=${{ secrets.PROJECT_TOKEN }} smartui capture urls.json --config smartui-web.json
+      - name: Install dependencies
+        run: npm i @lambdatest/smartui-cli
 
+      - name: Execute SmartUI tests
+        run: npx smartui --config smartui-web.json exec -- mvn --quiet test -D suite=sdk-cloud.xml
