@@ -1,0 +1,23 @@
+name: LambdaTest Example
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      
+      - name: Install CLI
+        run: npm install -g @lambdatest/smartui-cli
+      
+      - name: Run Tests
+        run: smartui capture urls.json --config smartui-web.json
+
