@@ -22,5 +22,5 @@ jobs:
         run: npm i @lambdatest/smartui-cli @lambdatest/playwright-driver playwright
 
       - name: Execute SmartUI tests
-        run: npx smartui capture urls.json --config smartui-web.json
+        run: npx smartui exec capture urls.json --config smartui-web.json
 
